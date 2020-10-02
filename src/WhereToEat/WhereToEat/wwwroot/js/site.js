@@ -6,12 +6,20 @@
 
 let map;
 
-function initMap() {
-    map = new google.maps.Map(document.getElementById("map"), {
-        center: {
-            lat: -34.397,
-            lng: 150.644,
-        },
-        zoom: 8,
+function showMapWithCurrentLocation(position) {
+    var lat = position.coords.latitude;
+    var long = position.coords.longitude;
+    var myLocation = new google.maps.LatLng(lat, long);
+    var mapOptions = {
+        center: myLocation,
+        zoom: 12,
+        mapTypeId: google.maps.MapTypeId.ROADMAP
+    };
+
+    map = new google.maps.Map(document.getElementById("map"), mapOptions);
+    var mylocationMarker = new google.maps.Marker({
+        position: myLocation,
+        title: "My location"
     });
+    mylocationMarker.setMap(map);
 }

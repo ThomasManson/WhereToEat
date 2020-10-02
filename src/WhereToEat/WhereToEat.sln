@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.30523.141
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WhereToEat", "WhereToEat\WhereToEat.csproj", "{73863C82-841B-4BA6-99CB-02D30121EF3A}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{73863C82-841B-4BA6-99CB-02D30121EF3A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{73863C82-841B-4BA6-99CB-02D30121EF3A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{73863C82-841B-4BA6-99CB-02D30121EF3A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{73863C82-841B-4BA6-99CB-02D30121EF3A}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {12A0600A-1146-42E2-94DF-DCEC0EFB0AEB}
+	EndGlobalSection
+EndGlobal

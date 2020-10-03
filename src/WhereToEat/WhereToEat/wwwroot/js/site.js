@@ -22,4 +22,32 @@ function showMapWithCurrentLocation(position) {
         title: "My location"
     });
     mylocationMarker.setMap(map);
+
+    google.maps.event.addListener(map, 'bounds_changed', function ()
+    {
+        var bounds = new google.maps.LatLngBounds();
+        bounds = map.getBounds();
+        var northEast = bounds.getNorthEast();
+        var southWest = bounds.getSouthWest();
+        var northWest = new google.maps.LatLng(northEast.lat(), southWest.lng());
+        var southEast = new google.maps.LatLng(southWest.lat(), northEast.lng());
+
+        var options = {};
+        options.url = "/api/FoodTruck";
+        options.data = { northwestLatitude: northWest.lat(), northwestLongitude: northWest.lng(), southeastLatitude: southEast.lat(), southeastLongitude: southEast.lng() };
+        options.type = "GET";
+        options.dataType = "json";
+        options.success = function (data) {
+
+        };
+        options.error = function () {
+
+        }
+        $.ajax(options);
+
+    });
+}
+
+function showFoodTrucks() {
+    var currentBounds = map.getBounds();
 }

@@ -1,18 +1,14 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Diagnostics;
-using System.Linq;
-using System.Threading.Tasks;
-
-using Microsoft.AspNetCore.Mvc;
-using Microsoft.Extensions.Logging;
-using Microsoft.Extensions.Options;
-
-using WhereToEat.Configuration;
-using WhereToEat.Models;
-
-namespace WhereToEat.Controllers
+﻿namespace WhereToEat.Controllers
 {
+    using System.Diagnostics;
+
+    using Microsoft.AspNetCore.Mvc;
+    using Microsoft.Extensions.Logging;
+    using Microsoft.Extensions.Options;
+
+    using WhereToEat.Configuration;
+    using WhereToEat.Models;
+
     public class HomeController : Controller
     {
         private readonly IOptionsSnapshot<AppConfigOptions> appConfigSnapshot;

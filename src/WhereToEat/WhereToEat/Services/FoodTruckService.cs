@@ -30,7 +30,7 @@
             try
             {
                 this.logger.LogDebug("Starting GetFoodTrucksWithinAreaAsync: northwest: {northwest}, southeast: {southeast}", northwest, southeast);
-                var url = ApiCatalog.GetFoodTrucksInArea(appConfigSnapshot.Value.FoodTruckUrl, northwest, southeast);
+                var url = ApiCatalog.GetFoodTrucksInArea(this.appConfigSnapshot.Value.FoodTruckUrl, northwest, southeast);
                 var response = await this.httpClient.GetAsync(url);
                 if (response.IsSuccessStatusCode)
                 {

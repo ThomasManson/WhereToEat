@@ -1,12 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-
-using WhereToEat.Models;
-
-namespace WhereToEat.Services
+﻿namespace WhereToEat.Services
 {
+
+    using WhereToEat.Models;
+
     public static class ApiCatalog
     {
         public static string GetFoodTrucksInArea(string baseUrl, Position northwest, Position southeast)

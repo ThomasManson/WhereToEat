@@ -1,18 +1,16 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-
-using Microsoft.AspNetCore.Mvc;
-using Microsoft.Extensions.Logging;
-
-using WhereToEat.Models;
-using WhereToEat.Services;
-
-// For more information on enabling Web API for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+﻿// For more information on enabling Web API for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
 
 namespace WhereToEat.Api
 {
+    using System.Collections.Generic;
+    using System.Threading.Tasks;
+
+    using Microsoft.AspNetCore.Mvc;
+    using Microsoft.Extensions.Logging;
+
+    using WhereToEat.Models;
+    using WhereToEat.Services;
+
     [Route("api/[controller]")]
     [ApiController]
     public class FoodTruckController : ControllerBase
@@ -29,9 +27,9 @@ namespace WhereToEat.Api
         // GET: api/<FoodTruckController>
         [HttpGet]
         public async Task<IEnumerable<FoodTruck>> GetAsync(
-            [FromQuery] double northwestLatitude, 
+            [FromQuery] double northwestLatitude,
             [FromQuery] double northwestLongitude,
-            [FromQuery] double southeastLatitude, 
+            [FromQuery] double southeastLatitude,
             [FromQuery] double southeastLongitude)
         {
             this.logger.LogDebug("Starting Get FoodTrucks. Parameters: northwestLatitude: {northwestLatitude}, northwestLongitude: {northwestLongitude}, southeastLatitude: {southeastLatitude}, southeastLongitude: {southeastLongitude}", northwestLatitude, northwestLongitude, southeastLatitude, southeastLongitude);

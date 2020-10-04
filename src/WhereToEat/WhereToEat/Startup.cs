@@ -11,6 +11,7 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 
 using WhereToEat.Configuration;
+using WhereToEat.Services;
 
 namespace WhereToEat
 {
@@ -26,8 +27,10 @@ namespace WhereToEat
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
-            services.Configure<AppConfigOptions>(Configuration.GetSection(AppConfigOptions.AppConfig));
+            services.Configure<AppConfigOptions>(this.Configuration.GetSection(AppConfigOptions.AppConfig));
+            services.AddHttpClient<IFoodTruckService, FoodTruckService>();
             services.AddControllersWithViews();
+            services.AddApplicationInsightsTelemetry(Configuration["APPINSIGHTS_INSTRUMENTATIONKEY"]);
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

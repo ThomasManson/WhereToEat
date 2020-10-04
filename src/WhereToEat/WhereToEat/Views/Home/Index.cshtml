@@ -1,8 +1,12 @@
 ﻿<script src="https://polyfill.io/v3/polyfill.min.js?features=default"></script>
-<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyALo7l1uvIWRHbtrhIGXG3uC1-_3qhHI8c" defer></script>
+<script src="https://maps.googleapis.com/maps/api/js?key=@ViewData["key"]" defer></script>
+<script src="https://unpkg.com/@@google/markerclustererplus@4.0.1/dist/markerclustererplus.min.js"></script>
 <script>
     $(document).ready(function () {
         navigator.geolocation.getCurrentPosition(showMapWithCurrentLocation);
+        $("input#go").click(function () {
+            showMap($("input#lat").val(), $("input#long").val());
+        });
     });
     
 </script>
@@ -13,7 +17,16 @@
 <div class="text-center">
     <h1 class="display-4">Where's my next meal?</h1>
 </div>
+<div>
+    <div>
+        <label for="lat">Latitude</label>
+        <input type="number" id="lat" />
+        <label for="long">Longitude</label>
+        <input type="number" id="long" />
+        <input type="submit" id="go" value="Go"/>
+    </div>
 
+</div>
 <div id="map"></div>
 
 

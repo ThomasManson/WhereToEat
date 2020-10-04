@@ -27,6 +27,7 @@ namespace WhereToEat.Controllers
         public IActionResult Index()
         {
             var key = this.appConfigSnapshot.Value.MapApiKey;
+            this.ViewData["key"] = key;
             return this.View();
         }
 

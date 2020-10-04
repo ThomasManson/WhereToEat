@@ -4,8 +4,10 @@ using System.Linq;
 using System.Threading.Tasks;
 
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.Extensions.Logging;
 
 using WhereToEat.Models;
+using WhereToEat.Services;
 
 // For more information on enabling Web API for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
 
@@ -15,15 +17,29 @@ namespace WhereToEat.Api
     [ApiController]
     public class FoodTruckController : ControllerBase
     {
+        private readonly IFoodTruckService foodTruckService;
+        private readonly ILogger<FoodTruckController> logger;
+
+        public FoodTruckController(IFoodTruckService foodTruckService, ILogger<FoodTruckController> logger)
+        {
+            this.foodTruckService = foodTruckService;
+            this.logger = logger;
+        }
+
         // GET: api/<FoodTruckController>
         [HttpGet]
-        public IEnumerable<string> Get(
+        public async Task<IEnumerable<FoodTruck>> GetAsync(
             [FromQuery] double northwestLatitude, 
             [FromQuery] double northwestLongitude,
             [FromQuery] double southeastLatitude, 
             [FromQuery] double southeastLongitude)
         {
-            return new string[] { "value1", "value2" };
+            this.logger.LogDebug("Starting Get FoodTrucks. Parameters: northwestLatitude: {northwestLatitude}, northwestLongitude: {northwestLongitude}, southeastLatitude: {southeastLatitude}, southeastLongitude: {southeastLongitude}", northwestLatitude, northwestLongitude, southeastLatitude, southeastLongitude);
+
+            var result = await this.foodTruckService.GetFoodTrucksWithinAreaAsync(new Position(northwestLatitude, northwestLongitude), new Position(southeastLatitude, southeastLongitude));
+
+            this.logger.LogDebug("Result returned from FoodTruckService: ", result);
+            return result;
         }
 
         // GET api/<FoodTruckController>/5

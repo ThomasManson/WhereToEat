@@ -1,7 +1,11 @@
 # WhereToEat
-Sample project to show the location of San Francisco food trucks
+Sample project to show the location of San Francisco food trucks.
+<p>When the application starts, it will default to the centre of an Francisco, as that is the area that the food truck data source covers. You can enter a latitude and longitude if required, or just drag the map around to find the location you are interested in.
+Clicking on any of the markers will show you more details about that food truck.
+<br/>If you click on a grouped marker (it will have a number in the middle), the map will zoom to show that area, and show the food truck locations within it.
+</p>
 
-## Getting started
+## Getting started with the code
 To get started, do the following:
 - Clone this repo
 - Get a Google Maps API key from https://developers.google.com/maps/documentation/javascript/get-api-key

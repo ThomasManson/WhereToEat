@@ -1,8 +1,4 @@
-﻿// Please see documentation at https://docs.microsoft.com/aspnet/core/client-side/bundling-and-minification
-// for details on configuring this project to bundle and minify static web assets.
-
-// Write your JavaScript code.
-"use strict";
+﻿"use strict";
 
 let map;
 let currentInfoWindow;
@@ -10,12 +6,9 @@ let markers;
 let currentLocation;
 let markerCluster;
 
-function showMapWithCurrentLocation(position) {
+function showMapWithCurrentLocation() {
     var lat = 37.7577909;
     var long = -122.4232633;
-    //var defaultLoc = new google.maps.LatLng(37.7577909, -122.4232633);
-    //var lat = position.coords.latitude;
-    //var long = position.coords.longitude;
     showMap(lat, long);
     $("input#lat").val(lat);
     $("input#long").val(long);

@@ -34,7 +34,7 @@ I am fairly familiar with ASP.NET MVC, so this seemed a good starting point.
 
 Why Google Maps?
 <br/>
-I last used Google maps about 8 years ago, so it seemed a good opertunity to get familiar with it again. It also provided a number of features that would be useful, such as grouping of markers.
+I last used Google maps about 8 years ago, so it seemed a good opportunity to get familiar with it again. It also provided a number of features that would be useful, such as grouping of markers.
 
 What is missing?
 <br/>

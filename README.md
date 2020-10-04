@@ -34,9 +34,6 @@ I last used Google maps about 8 years ago, so it seemed a good opertunity to get
 
 What is missing?
 <br/>
-1. Exception handling
-<br/>
-   There is not enough exception handling, especially in the javascript on the maps page. 
-<br/>
+1. Exception handling: There is not enough exception handling, especially in the javascript on the maps page. 
 1. Tests, and more tests! There is some test coverage, but the focus of the next phase should be to get the test coverage up. The quality of the tests could also do with attention - they don't necessarily cover all the cases, or assert enough details
 1. Automated Deployment - there is currently no automated deployment pipeline for the project. This should be created as a priority, with a way to manage the api keys securely. 

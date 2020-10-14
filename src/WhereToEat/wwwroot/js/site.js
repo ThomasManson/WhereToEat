@@ -59,7 +59,7 @@ function showMap(lat, long) {
                     '<div id="bodyContent">' +
                     '<b>Address:</b> ' + truck.address + '<br/>' +
                     '<b>Food:</b> ' + truck.fooditems + '<br/>' +
-                    '<b>Days and times:</b> ' + ((truck.dayshours !== null) ? truck.fooditems : 'Unknown') + '<br/>' +
+                    '<b>Days and times:</b> ' + ((truck.dayshours !== null) ? truck.dayshours : 'Unknown') + '<br/>' +
                     '</div>' +
                     '</div>';
                 var infowindow = new google.maps.InfoWindow({
